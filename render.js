@@ -8720,14 +8720,17 @@ const a0_0x41c8f3 = {
                     window.mover = false;
                 }
             }
-			if (player && _0x50a8e5 && players.length) {
-				let closest = players.filter(p => getDist(player, p) < 1).sort((a, b) => getDist(player, a) - getDist(player, b))[0];
-				if (closest && window.mod.pvpbot) {
-					fighter.run(closest);
-				} else if (window.pvpBot.inFight) {
-					fighter.reset();
-				}
-			}
+            if (player && _0x50a8e5 && players.length) {
+                let closest = players.sort((a, b) => getDist(player, a) - getDist(player, b))[0];
+
+                if (window.mod.pvpbot) {
+                    fighter.run();
+                } else if (window.pvpBot.inFight) {
+                    fighter.reset();
+                }
+            } else if (window.pvpBot.inFight) {
+                fighter.reset();
+            }
             if (player && _0x50a8e5) {
                 if (window.mod.killtext) {
                     if (nextWins == player.wins1v1 && player.wins1v1 > 0) {
