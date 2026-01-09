@@ -8721,7 +8721,7 @@ const a0_0x41c8f3 = {
                 }
             }
 			if (player && _0x50a8e5 && players.length) {
-				let closest = players.filter(p => getDist(player, p) < 50).sort((a, b) => getDist(player, a) - getDist(player, b))[0];
+				let closest = players.filter(p => getDist(player, p) < 1).sort((a, b) => getDist(player, a) - getDist(player, b))[0];
 				if (closest && window.mod.pvpbot) {
 					fighter.run(closest);
 				} else if (window.pvpBot.inFight) {
